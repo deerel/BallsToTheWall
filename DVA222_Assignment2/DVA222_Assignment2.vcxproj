@@ -82,17 +82,27 @@
   <ItemGroup>
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Graphix.h" />
+    <ClInclude Include="HorizontalLine.h" />
+    <ClInclude Include="Obsticle.h" />
     <ClInclude Include="Shape.h" />
+    <ClInclude Include="SpeedDownBox.h" />
+    <ClInclude Include="SpeedUpBox.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="VerticalLine.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="DVA222_Assignment2.cpp" />
     <ClCompile Include="Graphix.cpp" />
+    <ClCompile Include="HorizontalLine.cpp" />
+    <ClCompile Include="Obsticle.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="SpeedDownBox.cpp" />
+    <ClCompile Include="SpeedUpBox.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="VerticalLine.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

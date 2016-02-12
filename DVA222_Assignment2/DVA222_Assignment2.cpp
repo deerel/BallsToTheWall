@@ -8,12 +8,17 @@
 #include "Graphix.h"
 
 #include "Ball.h"
+#include "VerticalLine.h"
+#include "HorizontalLine.h"
+#include "SpeedUpBox.h"
+#include "SpeedDownBox.h"
+#include "Obsticle.h"
 
-
-int ballCount = 10;
+int ballCount = 20;
+int obsticleCount = 13;
 
 Ball **balls = new Ball*[ballCount];
-
+Obsticle **obsticles = new Obsticle*[obsticleCount];
 
 		 
 int _tmain(int argc, char** argv)
@@ -29,6 +34,20 @@ int _tmain(int argc, char** argv)
 		balls[i] = new Ball(400, 300, 10);
 		balls[i]->SetSpeed(Vector(10 * rand() / RAND_MAX -5 , 10 * rand() / RAND_MAX -5));
 	}
+
+	obsticles[0] = new SpeedUpBox(180, 180, 80, 80);
+	obsticles[1] = new SpeedUpBox(650, 310, 50, 110);
+	obsticles[2] = new SpeedDownBox(70, 480, 290, 50);
+	obsticles[3] = new SpeedDownBox(520, 80, 80, 80);
+	obsticles[4] = new VerticalLine(20, 90, 510);
+	obsticles[5] = new VerticalLine(110, 80, 180);
+	obsticles[6] = new VerticalLine(750, 40, 510);
+	obsticles[7] = new HorizontalLine(70, 40, 240);
+	obsticles[8] = new HorizontalLine(400, 40, 280);
+	obsticles[9] = new HorizontalLine(130, 130, 230);
+	obsticles[10] = new HorizontalLine(200, 420, 400);
+	obsticles[11] = new HorizontalLine(500, 480, 230);
+	obsticles[12] = new HorizontalLine(10, 580, 670);
 
 	
 	//NOTE:
@@ -56,6 +75,11 @@ void Draw()
 	{
 		balls[i]->Update();
 		balls[i]->Draw();
+		for (int j = 0;j < obsticleCount;j++)
+		{
+			obsticles[j]->CheckCollision(*balls[i]);
+			obsticles[j]->Draw();
+		}
 	}
 
 	Redraw();
