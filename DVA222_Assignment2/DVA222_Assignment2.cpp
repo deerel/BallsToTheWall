@@ -49,7 +49,7 @@ int _tmain(int argc, char** argv)
 	obsticles[11] = new HorizontalLine(500, 480, 230);
 	obsticles[12] = new HorizontalLine(10, 580, 670);
 
-	
+
 	//NOTE:
 	//----------------------------------------------------------------------
 	//Below this line control of your main is passed to graphix library
@@ -77,8 +77,9 @@ void Draw()
 		balls[i]->Draw();
 		for (int j = 0;j < obsticleCount;j++)
 		{
-			obsticles[j]->CheckCollision(*balls[i]);
 			obsticles[j]->Draw();
+			if (obsticles[j]->CheckCollision(*balls[i]))
+				obsticles[j]->CollisionAction(*balls[i]);
 		}
 	}
 

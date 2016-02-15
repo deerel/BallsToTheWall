@@ -18,29 +18,8 @@ bool HorizontalLine::CheckCollision(Ball & B)
 	double ballRadius = B.GetRadius();
 
 	if (position.X < (ballPosition.X + ballRadius) && endPosition.X >(ballPosition.X - ballRadius))
-	{
 		if (position.Y < (ballPosition.Y + ballRadius) && position.Y >(ballPosition.Y - ballRadius))
-		{
-			CollisionAction(B);
 			return true;
-		}
-	}
-
-	// This code does not exist..
-
-	//I told you! Nothing here!
-	// Checks if ball width extremely high speed collides.
-	if (position.X < (ballPosition.X + ballRadius) && endPosition.X >(ballPosition.X - ballRadius))
-	{
-		if ( ( position.Y > (ballPosition.Y + ballRadius) && position.Y > (ballPosition.Y - ballRadius) &&
-			position.Y < (ballPosition.Y + ballRadius + B.GetSpeed().Y) && position.Y < (ballPosition.Y - ballRadius + B.GetSpeed().Y) ) ||
-			(position.Y < (ballPosition.Y + ballRadius) && position.Y < (ballPosition.Y - ballRadius) &&
-			position.Y > (ballPosition.Y + ballRadius + B.GetSpeed().Y) && position.Y > (ballPosition.Y - ballRadius + B.GetSpeed().Y)))
-		{
-			CollisionAction(B);
-			return true;
-		}
-	}
 
 	return false;
 }
@@ -55,5 +34,5 @@ void HorizontalLine::CollisionAction(Ball & B)
 void HorizontalLine::Draw()
 {
 	SetColor(0, 255, 0);
-	DrawLine(position.X, position.Y, endPosition.X, endPosition.Y);
+	Line::Draw();
 }

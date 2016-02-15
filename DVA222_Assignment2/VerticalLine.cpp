@@ -15,16 +15,12 @@ VerticalLine::~VerticalLine()
 
 bool VerticalLine::CheckCollision(Ball & B)
 {
-
 	Point ballPosition = B.GetPosition();
 	double ballRadius = B.GetRadius();
 
 	if (position.X < (ballPosition.X + ballRadius) && position.X >(ballPosition.X - ballRadius))
-	{
 		if(position.Y < (ballPosition.Y + ballRadius) && endPosition.Y > (ballPosition.Y - ballRadius))
-		CollisionAction(B);
-		return true;
-	}
+			return true;
 
 	return false;
 }
@@ -39,5 +35,5 @@ void VerticalLine::CollisionAction(Ball & B)
 void VerticalLine::Draw()
 {
 	SetColor(255, 255, 0);
-	DrawLine(position.X, position.Y, endPosition.X, endPosition.Y);
+	Line::Draw();
 }

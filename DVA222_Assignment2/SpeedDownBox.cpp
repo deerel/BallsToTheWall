@@ -15,22 +15,6 @@ SpeedDownBox::~SpeedDownBox()
 {
 }
 
-bool SpeedDownBox::CheckCollision(Ball & B)
-{
-	Point ballPosition = B.GetPosition();
-	double ballRadius = B.GetRadius();
-
-	if (position.X < (ballPosition.X + ballRadius) && endPosition.X >(ballPosition.X - ballRadius))
-	{
-		if (position.Y < (ballPosition.Y + ballRadius) && endPosition.Y >(ballPosition.Y - ballRadius))
-		{
-			CollisionAction(B);
-			return true;
-		}
-	}
-
-	return false;
-}
 
 void SpeedDownBox::CollisionAction(Ball & B)
 {
@@ -43,5 +27,5 @@ void SpeedDownBox::CollisionAction(Ball & B)
 void SpeedDownBox::Draw()
 {
 	SetColor(0, 0, 255);
-	DrawRectanle(position.X, position.Y, endPosition.X - position.X, endPosition.Y - position.Y);
+	Box::Draw();
 }

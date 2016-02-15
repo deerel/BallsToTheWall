@@ -1,8 +1,8 @@
 #pragma once
-#include "Obsticle.h"
+#include "Line.h"
 #include "Ball.h"
 
-class VerticalLine : public Obsticle
+class VerticalLine : public Line
 {
 public:
 	VerticalLine(int x, int y, int length);

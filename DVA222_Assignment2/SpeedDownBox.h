@@ -1,14 +1,12 @@
 #pragma once
-#include "Obsticle.h"
-#include "Ball.h"
+#include "Box.h"
 
-class SpeedDownBox : public Obsticle
+class SpeedDownBox : public Box
 {
 public:
 	SpeedDownBox(int x, int y, int width, int height);
 	~SpeedDownBox();
 
-	bool CheckCollision(Ball &B);
 	void CollisionAction(Ball &B);
 	void Draw();
 };

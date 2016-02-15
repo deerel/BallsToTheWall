@@ -1,15 +1,14 @@
 #pragma once
-#include "Obsticle.h"
+#include "Line.h"
 #include "Ball.h"
 
-class HorizontalLine : public Obsticle
+class HorizontalLine : public Line
 {
 public:
 	HorizontalLine(int x, int y, int length);
 	~HorizontalLine();
-
-	bool CheckCollision(Ball &B);
 	void CollisionAction(Ball &B);
+	bool CheckCollision(Ball &B);
 	void Draw();
 };
 

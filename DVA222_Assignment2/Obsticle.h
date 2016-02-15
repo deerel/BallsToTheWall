@@ -12,7 +12,7 @@ public:
 	Obsticle();
 	~Obsticle();
 	virtual bool CheckCollision(Ball &B) = 0;
-	virtual void CollisionAction(Ball &B) = 0;
 	virtual void Draw() = 0;
+	virtual void CollisionAction(Ball &B) = 0;
 };
 
